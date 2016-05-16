@@ -439,19 +439,19 @@
 1461850206 source:d:\c language\sfml\7777\main.cpp
 	<SFML/Graphics.hpp>
 
-1463228746 source:/root/Desktop/7777/main.cpp
+1463403537 source:/root/Desktop/7777/main.cpp
 	"Data.h"
 	"Bullet.h"
 	"Music.h"
 	"Enemy.h"
 	"Text.h"
 
-1463203869 /root/Desktop/7777/include/Player.h
+1463399361 /root/Desktop/7777/include/Player.h
 	<SFML/Graphics.hpp>
 	"Bullet.h"
 	"PlayerBullet.h"
 
-1463204160 source:/root/Desktop/7777/src/Player.cpp
+1463399361 source:/root/Desktop/7777/src/Player.cpp
 	"Player.h"
 	"Data.h"
 	<SFML/Graphics.hpp>
@@ -479,24 +479,24 @@
 1462251972 /root/Desktop/7777/include/Music.h
 	<SFML/Audio.hpp>
 
-1462251959 source:/root/Desktop/7777/src/Music.cpp
+1463396703 source:/root/Desktop/7777/src/Music.cpp
 	"Music.h"
 
-1463201430 /root/Desktop/7777/include/Enemy.h
+1463403687 /root/Desktop/7777/include/Enemy.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	"Bullet.h"
 	"EnemyBulletOne.h"
 
-1463201430 source:/root/Desktop/7777/src/Enemy.cpp
+1463403641 source:/root/Desktop/7777/src/Enemy.cpp
 	"Enemy.h"
 	"Data.h"
 	<random>
 
-1463132091 /root/Desktop/7777/include/Text.h
+1463397908 /root/Desktop/7777/include/Text.h
 	<SFML/Graphics.hpp>
 
-1463195535 source:/root/Desktop/7777/src/Text.cpp
+1463398480 source:/root/Desktop/7777/src/Text.cpp
 	"Text.h"
 	"Data.h"
 	<cstdlib>
@@ -504,24 +504,26 @@
 1462779804 source:/root/Desktop/7777/src/Data.cpp
 	"Data.h"
 
-1463192984 /root/Desktop/7777/include/Data.h
+1463397641 /root/Desktop/7777/include/Data.h
 	"Player.h"
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<iostream>
+	<random>
+	<cmath>
 
-1463204738 /root/Desktop/7777/include/PlayerBullet.h
+1463384097 /root/Desktop/7777/include/PlayerBullet.h
 	"Bullet.h"
 
-1463204328 /root/Desktop/7777/include/EnemyBulletOne.h
+1463395414 /root/Desktop/7777/include/EnemyBulletOne.h
 	"Data.h"
 	"Bullet.h"
 
-1463204789 source:/root/Desktop/7777/src/EnemyBulletOne.cpp
+1463402946 source:/root/Desktop/7777/src/EnemyBulletOne.cpp
 	"EnemyBulletOne.h"
 	<SFML/Graphics.hpp>
 
-1463204870 source:/root/Desktop/7777/src/PlayerBullet.cpp
+1463384613 source:/root/Desktop/7777/src/PlayerBullet.cpp
 	"PlayerBullet.h"
 	<SFML/Graphics.hpp>
 	"Data.h"

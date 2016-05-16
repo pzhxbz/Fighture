@@ -12,6 +12,7 @@ class PlayerBullet:public Bullet
         void draw();
         sf::FloatRect boundingBox;
         bool is_over();
+        bool isFire=false;
     protected:
     private:
         sf::Sprite sprite;

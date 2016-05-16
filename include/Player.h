@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Bullet.h"
 #include "PlayerBullet.h"
+#define PLAYER_BULLET_MAX 3
 class Player
 {
     public:
@@ -14,7 +15,7 @@ class Player
         sf::FloatRect bound();
         void bullet_destory();
         void bullet_shotted();
-        Bullet* bullet[10]={NULL};
+        PlayerBullet bullet[PLAYER_BULLET_MAX];
     protected:
     private:
         sf::Texture texture;
@@ -22,5 +23,6 @@ class Player
         sf::Clock fire_speed;
         bool isFire=false;
         sf::FloatRect boundingBox;
+        float moveSpeed;
 };
 #endif // PLAYER_H

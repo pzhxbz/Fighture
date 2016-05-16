@@ -7,18 +7,23 @@ PlayerBullet::PlayerBullet()
     texture.setSmooth(true);
     sprite.setTexture(texture);
     boundingBox=sprite.getGlobalBounds();
-    speed=-5;
+    speed=-4;
 }
 PlayerBullet::~PlayerBullet()
 {
 }
 void PlayerBullet::fire(float x,float y)
 {
+    isFire=true;
     sprite.setPosition(x,y);
     move();
 }
 void PlayerBullet::move()
 {
+    if(!isFire)
+    {
+        return;
+    }
     sprite.move(0,speed);
     boundingBox=sprite.getGlobalBounds();
     draw();

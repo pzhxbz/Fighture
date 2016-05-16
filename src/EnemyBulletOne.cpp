@@ -7,6 +7,7 @@ EnemyBulletOne::EnemyBulletOne(float speed)
     sprite.setTexture(texture);
     boundingBox=sprite.getGlobalBounds();
     this->speed=speed;
+    k=(rand()%200000)*PI/100000;
 }
 EnemyBulletOne::~EnemyBulletOne()
 {
@@ -19,7 +20,7 @@ void EnemyBulletOne::fire(float x,float y)
 }
 void EnemyBulletOne::move()
 {
-    sprite.move(0,speed);
+    sprite.move(speed*cos(k),speed*sin(k));
     boundingBox=sprite.getGlobalBounds();
     draw();
     collision();
@@ -31,7 +32,8 @@ void EnemyBulletOne::draw()
 bool EnemyBulletOne::is_over()
 {
     int y=sprite.getPosition().y;
-    return (y>HEIGHT);
+    int x=sprite.getPosition().x;
+    return (y>HEIGHT)||(x>WIDTH)||(y<0)||(x<0);
 }
 void EnemyBulletOne::destory()
 {
@@ -39,7 +41,7 @@ void EnemyBulletOne::destory()
 }
 void EnemyBulletOne::collision()
 {
-    if(boundingBox.intersects(Data::a.bound()))
+    if(boundingBox.intersects(Data::player.bound()))
     {
         Data::life--;
         destory();

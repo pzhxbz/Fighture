@@ -19,6 +19,7 @@ class EnemyBulletOne:public Bullet
         sf::Sprite sprite;
         sf::Texture texture;
         float speed;
+        float k;
 };
 
 #endif // ENEMYBULLETONE_H

@@ -13,8 +13,10 @@ class Text
         sf::Font font;
         sf::Text score;
         sf::Text life;
-        char s[12];
-        char l[12];
+        sf::Text level;
+        char s[20];
+        char l[20];
+        char lev[20];
 
 };
 
