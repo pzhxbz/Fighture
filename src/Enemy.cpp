@@ -48,12 +48,14 @@ void Enemy::move()
     draw();
     if(isDestory)
     {
+        float t=boom_time.getElapsedTime().asSeconds();
+        sprite.setScale(t*2.2,t*2.2);
         return;
     }
     if(fire.getElapsedTime().asSeconds()>fireInterval)
     {
         isFire=false;
-        fireInterval=Random(30)/10-Data::level*0.5;
+        fireInterval=Random(60)/10-Data::level;
         fire.restart();
     }
     shoot();
@@ -76,8 +78,17 @@ void Enemy::shoot()
         {
             if(bullet[i]==NULL)
             {
-                bullet[i]=new EnemyBulletOne(((rand()%10)-10)/10+0.2);
-                bullet[i]->fire(sprite.getPosition().x+21.5,sprite.getPosition().y+60);
+                int type=rand()%2;
+                if(type==0)
+                {
+                    bullet[i]=new EnemyBulletOne(((rand()%20)-10)/10+0.2);
+                    bullet[i]->fire(sprite.getPosition().x+21.5,sprite.getPosition().y+60);
+                }
+                else if(type==1)
+                {
+                    bullet[i]=new EnemyBulletTwo((((rand()%10)-10)/10+0.2)/2);
+                    bullet[i]->fire(sprite.getPosition().x+21.5+rand()%50-25,sprite.getPosition().y+60+rand()%50-25);
+                }
                 isFire=true;
                 fire.restart();
                 break;
@@ -97,7 +108,7 @@ void Enemy::boom()
         hp--;
         return;
     }
-    image.loadFromFile("picture/enemy_boom.gif");
+    image.loadFromFile("picture/enemy_boom.png");
     texture.loadFromImage(image);
     texture.setSmooth(true);
     sprite.setTexture(texture);
@@ -109,6 +120,7 @@ void Enemy::boom()
         boom_time.restart();
     }
     isDestory=true;
+    sprite.move(0,20);
     Data::score+=score;
 }
 bool Enemy::isShooted()
@@ -135,4 +147,8 @@ bool Enemy::is_over()
         }
     }
     return ((y>=HEIGHT)||(x<=0));
+}
+sf::Vector2f Enemy::position()
+{
+    return sprite.getPosition();
 }

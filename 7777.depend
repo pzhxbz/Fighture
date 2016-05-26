@@ -439,19 +439,24 @@
 1461850206 source:d:\c language\sfml\7777\main.cpp
 	<SFML/Graphics.hpp>
 
-1463403537 source:/root/Desktop/7777/main.cpp
+1463915992 source:/root/Desktop/7777/main.cpp
 	"Data.h"
 	"Bullet.h"
 	"Music.h"
 	"Enemy.h"
 	"Text.h"
+	"Item.h"
+	"Score.h"
+	"Life.h"
+	"Power.h"
+	"Bomb.h"
 
-1463399361 /root/Desktop/7777/include/Player.h
+1463990165 /root/Desktop/7777/include/Player.h
 	<SFML/Graphics.hpp>
 	"Bullet.h"
 	"PlayerBullet.h"
 
-1463399361 source:/root/Desktop/7777/src/Player.cpp
+1463990179 source:/root/Desktop/7777/src/Player.cpp
 	"Player.h"
 	"Data.h"
 	<SFML/Graphics.hpp>
@@ -482,21 +487,22 @@
 1463396703 source:/root/Desktop/7777/src/Music.cpp
 	"Music.h"
 
-1463403687 /root/Desktop/7777/include/Enemy.h
+1463916145 /root/Desktop/7777/include/Enemy.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	"Bullet.h"
 	"EnemyBulletOne.h"
+	"EnemyBulletTwo.h"
 
-1463403641 source:/root/Desktop/7777/src/Enemy.cpp
+1463916555 source:/root/Desktop/7777/src/Enemy.cpp
 	"Enemy.h"
 	"Data.h"
 	<random>
 
-1463397908 /root/Desktop/7777/include/Text.h
+1463809862 /root/Desktop/7777/include/Text.h
 	<SFML/Graphics.hpp>
 
-1463398480 source:/root/Desktop/7777/src/Text.cpp
+1463810138 source:/root/Desktop/7777/src/Text.cpp
 	"Text.h"
 	"Data.h"
 	<cstdlib>
@@ -504,7 +510,7 @@
 1462779804 source:/root/Desktop/7777/src/Data.cpp
 	"Data.h"
 
-1463397641 /root/Desktop/7777/include/Data.h
+1463620687 /root/Desktop/7777/include/Data.h
 	"Player.h"
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
@@ -512,19 +518,62 @@
 	<random>
 	<cmath>
 
-1463384097 /root/Desktop/7777/include/PlayerBullet.h
+1463986391 /root/Desktop/7777/include/PlayerBullet.h
 	"Bullet.h"
 
 1463395414 /root/Desktop/7777/include/EnemyBulletOne.h
 	"Data.h"
 	"Bullet.h"
 
-1463402946 source:/root/Desktop/7777/src/EnemyBulletOne.cpp
+1463809257 source:/root/Desktop/7777/src/EnemyBulletOne.cpp
 	"EnemyBulletOne.h"
 	<SFML/Graphics.hpp>
 
-1463384613 source:/root/Desktop/7777/src/PlayerBullet.cpp
+1463986427 source:/root/Desktop/7777/src/PlayerBullet.cpp
 	"PlayerBullet.h"
 	<SFML/Graphics.hpp>
+	"Data.h"
+
+1463916519 /root/Desktop/7777/include/EnemyBulletTwo.h
+	"Data.h"
+
+1463454843 source:/root/Desktop/7777/src/EnemyBulletTwo.cpp
+	"EnemyBulletTwo.h"
+	<SFML/Graphics.hpp>
+
+1463621437 source:/root/Desktop/7777/src/Item.cpp
+	"Item.h"
+
+1463645810 /root/Desktop/7777/include/Item.h
+	<SFML/Graphics.hpp>
+
+1463990250 source:/root/Desktop/7777/src/Power.cpp
+	"Power.h"
+	"Data.h"
+
+1463638954 /root/Desktop/7777/include/Power.h
+	<SFML/Graphics.hpp>
+	"Item.h"
+
+1463990250 source:/root/Desktop/7777/src/Score.cpp
+	"Score.h"
+	"Data.h"
+
+1463638954 /root/Desktop/7777/include/Score.h
+	<SFML/Graphics.hpp>
+	"Item.h"
+
+1463990250 source:/root/Desktop/7777/src/Life.cpp
+	"Life.h"
+	"Data.h"
+
+1463638954 /root/Desktop/7777/include/Life.h
+	"Item.h"
+
+1463638954 /root/Desktop/7777/include/Bomb.h
+	"Item.h"
+
+1463990250 source:/root/Desktop/7777/src/Bomb.cpp
+	"Bomb.h"
 	"Data.h"
 

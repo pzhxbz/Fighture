@@ -1,45 +1,46 @@
-#include "EnemyBulletOne.h"
+#include "EnemyBulletTwo.h"
 #include <SFML/Graphics.hpp>
-EnemyBulletOne::EnemyBulletOne(float speed)
+EnemyBulletTwo::EnemyBulletTwo(float speed)
 {
-    texture.loadFromFile("picture/enemy_bullet1.png");
+    texture.loadFromFile("picture/enemy_bullet2.png");
     texture.setSmooth(true);
     sprite.setTexture(texture);
     boundingBox=sprite.getGlobalBounds();
     this->speed=speed;
-    k=(rand()%200000)*PI/100000;
+    t.restart();
 }
-EnemyBulletOne::~EnemyBulletOne()
+EnemyBulletTwo::~EnemyBulletTwo()
 {
 
 }
-void EnemyBulletOne::fire(float x,float y)
+void EnemyBulletTwo::fire(float x,float y)
 {
     sprite.setPosition(x,y);
     move();
 }
-void EnemyBulletOne::move()
+void EnemyBulletTwo::move()
 {
-    sprite.move(4*speed*cos(k),4*speed*sin(k));
+    float x=PI*t.getElapsedTime().asSeconds();
+    sprite.move(speed*(cos(x)-x*sin(x)),speed*(sin(x)+x*cos(x)));
     boundingBox=sprite.getGlobalBounds();
     draw();
     collision();
 }
-void EnemyBulletOne::draw()
+void EnemyBulletTwo::draw()
 {
     Data::window.draw(sprite);
 }
-bool EnemyBulletOne::is_over()
+bool EnemyBulletTwo::is_over()
 {
     int y=sprite.getPosition().y;
     int x=sprite.getPosition().x;
-    return (y>HEIGHT)||(x>WIDTH)||(y<0)||(x<0);
+    return (y>HEIGHT+100)||(x>WIDTH+100)||(y<-100)||(x<-100);
 }
-void EnemyBulletOne::destory()
+void EnemyBulletTwo::destory()
 {
     sprite.setPosition(0,HEIGHT+100);
 }
-void EnemyBulletOne::collision()
+void EnemyBulletTwo::collision()
 {
     if(Data::bomb.getElapsedTime().asSeconds()>0.5&&boundingBox.intersects(Data::player.bound()))
     {

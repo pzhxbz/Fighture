@@ -13,16 +13,20 @@ class Player
         void fire();
         void draw();
         sf::FloatRect bound();
+        sf::FloatRect Playerbound();
         void bullet_destory();
-        void bullet_shotted();
         PlayerBullet bullet[PLAYER_BULLET_MAX];
     protected:
     private:
         sf::Texture texture;
         sf::Sprite sprite;
+        sf::Texture bombTexture;
+        sf::Sprite bombsSprite;
+        sf::Texture effectTexture;
+        sf::Sprite effectSprite;
         sf::Clock fire_speed;
         bool isFire=false;
-        sf::FloatRect boundingBox;
         float moveSpeed;
+        bool isBomb=false;
 };
 #endif // PLAYER_H

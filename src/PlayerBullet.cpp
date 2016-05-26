@@ -7,7 +7,7 @@ PlayerBullet::PlayerBullet()
     texture.setSmooth(true);
     sprite.setTexture(texture);
     boundingBox=sprite.getGlobalBounds();
-    speed=-4;
+    speed=-8;
 }
 PlayerBullet::~PlayerBullet()
 {

@@ -56,22 +56,34 @@
 			<Add option="-pg" />
 			<Add directory="D:/SFML-2.3.2-gcc492/lib" />
 		</Linker>
+		<Unit filename="include/Bomb.h" />
 		<Unit filename="include/Bullet.h" />
 		<Unit filename="include/Data.h" />
 		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/EnemyBulletOne.h" />
+		<Unit filename="include/EnemyBulletTwo.h" />
+		<Unit filename="include/Item.h" />
+		<Unit filename="include/Life.h" />
 		<Unit filename="include/Music.h" />
 		<Unit filename="include/Player.h" />
 		<Unit filename="include/PlayerBullet.h" />
+		<Unit filename="include/Power.h" />
+		<Unit filename="include/Score.h" />
 		<Unit filename="include/Text.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Bomb.cpp" />
 		<Unit filename="src/Bullet.cpp" />
 		<Unit filename="src/Data.cpp" />
 		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/EnemyBulletOne.cpp" />
+		<Unit filename="src/EnemyBulletTwo.cpp" />
+		<Unit filename="src/Item.cpp" />
+		<Unit filename="src/Life.cpp" />
 		<Unit filename="src/Music.cpp" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/PlayerBullet.cpp" />
+		<Unit filename="src/Power.cpp" />
+		<Unit filename="src/Score.cpp" />
 		<Unit filename="src/Text.cpp" />
 		<Extensions>
 			<code_completion />

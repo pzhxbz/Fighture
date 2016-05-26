@@ -4,7 +4,8 @@
 #include <SFML/Audio.hpp>
 #include "Bullet.h"
 #include "EnemyBulletOne.h"
-#define BULLET_MAX_NUM 15
+#include "EnemyBulletTwo.h"
+#define BULLET_MAX_NUM 20
 class Enemy
 {
     public:
@@ -18,6 +19,7 @@ class Enemy
         bool isShooted();
         bool is_boom();
         bool is_over();
+        sf::Vector2f position();
     protected:
     private:
         sf::Texture texture;

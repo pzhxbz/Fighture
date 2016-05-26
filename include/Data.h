@@ -19,6 +19,9 @@ class Data
         static sf::RenderWindow window;
         static Player player;
         static int level;
+        static sf::Clock bomb;
+        static int bombNum;
+        static float power;
     protected:
     private:
 };
