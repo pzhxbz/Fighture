@@ -78,13 +78,13 @@ void Enemy::shoot()
         {
             if(bullet[i]==NULL)
             {
-                int type=rand()%2;
-                if(type==0)
+                int type=rand()%3;
+                if(type==1||type==0)
                 {
                     bullet[i]=new EnemyBulletOne(((rand()%20)-10)/10+0.2);
                     bullet[i]->fire(sprite.getPosition().x+21.5,sprite.getPosition().y+60);
                 }
-                else if(type==1)
+                else if(type==2)
                 {
                     bullet[i]=new EnemyBulletTwo((((rand()%10)-10)/10+0.2)/2);
                     bullet[i]->fire(sprite.getPosition().x+21.5+rand()%50-25,sprite.getPosition().y+60+rand()%50-25);

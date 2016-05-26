@@ -439,7 +439,7 @@
 1461850206 source:d:\c language\sfml\7777\main.cpp
 	<SFML/Graphics.hpp>
 
-1463915992 source:/root/Desktop/7777/main.cpp
+1464242212 source:/root/Desktop/7777/main.cpp
 	"Data.h"
 	"Bullet.h"
 	"Music.h"
@@ -451,12 +451,12 @@
 	"Power.h"
 	"Bomb.h"
 
-1463990165 /root/Desktop/7777/include/Player.h
+1464241512 /root/Desktop/7777/include/Player.h
 	<SFML/Graphics.hpp>
 	"Bullet.h"
 	"PlayerBullet.h"
 
-1463990179 source:/root/Desktop/7777/src/Player.cpp
+1464241554 source:/root/Desktop/7777/src/Player.cpp
 	"Player.h"
 	"Data.h"
 	<SFML/Graphics.hpp>
@@ -481,10 +481,10 @@
 	<SFML/Graphics.hpp>
 	"Bullet.h"
 
-1462251972 /root/Desktop/7777/include/Music.h
+1464241321 /root/Desktop/7777/include/Music.h
 	<SFML/Audio.hpp>
 
-1463396703 source:/root/Desktop/7777/src/Music.cpp
+1464241446 source:/root/Desktop/7777/src/Music.cpp
 	"Music.h"
 
 1463916145 /root/Desktop/7777/include/Enemy.h
@@ -494,15 +494,15 @@
 	"EnemyBulletOne.h"
 	"EnemyBulletTwo.h"
 
-1463916555 source:/root/Desktop/7777/src/Enemy.cpp
+1464242814 source:/root/Desktop/7777/src/Enemy.cpp
 	"Enemy.h"
 	"Data.h"
 	<random>
 
-1463809862 /root/Desktop/7777/include/Text.h
+1464241688 /root/Desktop/7777/include/Text.h
 	<SFML/Graphics.hpp>
 
-1463810138 source:/root/Desktop/7777/src/Text.cpp
+1464241711 source:/root/Desktop/7777/src/Text.cpp
 	"Text.h"
 	"Data.h"
 	<cstdlib>
@@ -525,9 +525,10 @@
 	"Data.h"
 	"Bullet.h"
 
-1463809257 source:/root/Desktop/7777/src/EnemyBulletOne.cpp
+1464242808 source:/root/Desktop/7777/src/EnemyBulletOne.cpp
 	"EnemyBulletOne.h"
 	<SFML/Graphics.hpp>
+	<cmath>
 
 1463986427 source:/root/Desktop/7777/src/PlayerBullet.cpp
 	"PlayerBullet.h"
@@ -537,9 +538,10 @@
 1463916519 /root/Desktop/7777/include/EnemyBulletTwo.h
 	"Data.h"
 
-1463454843 source:/root/Desktop/7777/src/EnemyBulletTwo.cpp
+1464242808 source:/root/Desktop/7777/src/EnemyBulletTwo.cpp
 	"EnemyBulletTwo.h"
 	<SFML/Graphics.hpp>
+	<cmath>
 
 1463621437 source:/root/Desktop/7777/src/Item.cpp
 	"Item.h"

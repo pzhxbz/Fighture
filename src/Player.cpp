@@ -149,3 +149,8 @@ sf::FloatRect Player::Playerbound()
 {
     return sprite.getGlobalBounds();
 }
+void Player::resetPosition()
+{
+    sprite.setPosition(WIDTH/2-16,HEIGHT-46);
+    effectSprite.setPosition(WIDTH/2-5,HEIGHT-23-2.5);
+}

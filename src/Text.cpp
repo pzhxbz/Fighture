@@ -46,4 +46,14 @@ void Text::draw()
     Data::window.draw(power);
     return;
 }
+void Text::endText()
+{
+    endGame.setFont(font);
+    endGame.setCharacterSize(30);
+    endGame.setColor(sf::Color::Red);
+    sprintf(end,"Congratualtions!\nYour score:%d\nPlease Press R to restart this game\nPress F1 to continue game",Data::score);
+    endGame.setString(end);
+    endGame.setPosition(WIDTH/2-200,HEIGHT/2-100);
+    Data::window.draw(endGame);
+}
 

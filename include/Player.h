@@ -16,6 +16,7 @@ class Player
         sf::FloatRect Playerbound();
         void bullet_destory();
         PlayerBullet bullet[PLAYER_BULLET_MAX];
+        void resetPosition();
     protected:
     private:
         sf::Texture texture;

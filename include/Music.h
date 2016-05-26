@@ -6,7 +6,7 @@ class Music
     public:
         Music();
         virtual ~Music();
-        void play();
+        void replay();
     protected:
     private:
         sf::SoundBuffer bgm;

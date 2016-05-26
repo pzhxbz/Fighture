@@ -1,12 +1,13 @@
 #include "EnemyBulletOne.h"
 #include <SFML/Graphics.hpp>
+#include <cmath>
 EnemyBulletOne::EnemyBulletOne(float speed)
 {
     texture.loadFromFile("picture/enemy_bullet1.png");
     texture.setSmooth(true);
     sprite.setTexture(texture);
     boundingBox=sprite.getGlobalBounds();
-    this->speed=speed;
+    this->speed=speed*sqrt(Data::level);
     k=(rand()%200000)*PI/100000;
 }
 EnemyBulletOne::~EnemyBulletOne()
