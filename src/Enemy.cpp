@@ -55,7 +55,7 @@ void Enemy::move()
     if(fire.getElapsedTime().asSeconds()>fireInterval)
     {
         isFire=false;
-        fireInterval=Random(60)/10-Data::level;
+        fireInterval=Random(60)/10-sqrt(Data::level);
         fire.restart();
     }
     shoot();
@@ -63,7 +63,6 @@ void Enemy::move()
     {
         sprite.move(0,0.1);
     }
-
     boundingBox=sprite.getGlobalBounds();
 }
 void Enemy::draw()

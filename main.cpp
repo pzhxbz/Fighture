@@ -8,6 +8,7 @@
 #include "Life.h"
 #include "Power.h"
 #include "Bomb.h"
+#include "Boss.h"
 #define ENEMY_MAX_NUM 8
 sf::RenderWindow Data::window(sf::VideoMode(WIDTH,HEIGHT),"Wy window");
 int Data::score=14999;
@@ -18,8 +19,12 @@ float Data::power=1.0;
 sf::Clock Data::bomb;
 Player Data::player;
 Text text;
+Boss boss;
 Enemy* enemy[ENEMY_MAX_NUM];
 sf::Clock enemyInit;
+sf::Clock refresh;
+sf::Texture backgroundTexture;
+sf::Sprite backgroundSprite;
 float enemyInterval=rand()%3+0.5;
 bool isRestart=false;
 Item* item[ENEMY_MAX_NUM*5];
@@ -30,6 +35,7 @@ void enemy_action();
 void item_action();
 void text_print();
 void init_enemy();
+void boss_fight();
 void init_item(sf::Vector2f position);
 int main()
 {
@@ -50,8 +56,10 @@ int main()
                     break;
                 }
             }
-            Data::window.clear(sf::Color::Black);
-            init_enemy();
+            if(Data::level%3!=0)
+            {
+                init_enemy();
+            }
             if(Data::life<0)
             {
                 text.endText();
@@ -69,10 +77,16 @@ int main()
             {
                 Data::player.move();
             }
-            enemy_action();
-            item_action();
             text_print();
-
+            if(Data::level%3!=0)
+            {
+                enemy_action();
+            }
+            else
+            {
+                boss_fight();
+            }
+            item_action();
         }
     }
     Data::window.close();
@@ -80,6 +94,8 @@ int main()
 }
 void init()
 {
+    backgroundTexture.loadFromFile("picture/background.png");
+    backgroundSprite.setTexture(backgroundTexture);
     Data::player.resetPosition();
     Data::life=3;
     Data::bombNum=3;
@@ -90,6 +106,7 @@ void init()
         return;
     }
     music.replay();
+    boss.init();
     Data::score=0;
     Data::level=1;
     Data::power=1.0;
@@ -148,6 +165,7 @@ bool collision(sf::FloatRect enemybound)
 }
 void enemy_action()
 {
+    Data::window.draw(backgroundSprite);
     for(int i=0;i<ENEMY_MAX_NUM;i++)
     {
         if(enemy[i]==NULL)
@@ -173,6 +191,7 @@ void enemy_action()
         }
         enemy[i]->move();
     }
+
 }
 void item_action()
 {
@@ -230,4 +249,37 @@ void text_print()
     Data::level=Data::score/5000+1;
     text.draw();
     Data::window.display();
+}
+void boss_fight()
+{
+    Data::window.draw(backgroundSprite);
+    if(!boss.isInit())
+    {
+        for(int i=0;i<ENEMY_MAX_NUM;i++)
+        {
+            if(enemy[i]!=NULL)
+            {
+                delete(enemy[i]);
+                enemy[i]=NULL;
+            }
+        }
+        boss.init();
+    }
+    boss.move();
+    for(int i=0;i<PLAYER_BULLET_MAX;i++)
+    {
+        if(boss.collision().intersects(Data::player.bullet[i].boundingBox))
+        {
+            boss.isShoot();
+            Data::player.bullet[i].destory();
+        }
+    }
+    if(Data::bomb.getElapsedTime().asSeconds()<0.5)
+    {
+        boss.isBomb();
+    }
+    if(boss.is_boom())
+    {
+        boss.boom();
+    }
 }

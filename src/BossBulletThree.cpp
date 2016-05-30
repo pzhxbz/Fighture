@@ -1,46 +1,44 @@
-#include "EnemyBulletOne.h"
-#include <SFML/Graphics.hpp>
-#include <cmath>
-EnemyBulletOne::EnemyBulletOne(float speed)
+#include "BossBulletThree.h"
+#include "Data.h"
+BossBulletThree::BossBulletThree(float speed)
 {
-    texture.loadFromFile("picture/enemy_bullet1.png");
+    texture.loadFromFile("picture/bossBullet3.png");
     texture.setSmooth(true);
     sprite.setTexture(texture);
     boundingBox=sprite.getGlobalBounds();
     this->speed=speed*sqrt(sqrt(Data::level));
-    k=(rand()%200000)*PI/100000;
 }
-EnemyBulletOne::~EnemyBulletOne()
+BossBulletThree::~BossBulletThree()
 {
-
+    //dtor
 }
-void EnemyBulletOne::fire(float x,float y)
+void BossBulletThree::fire(float x,float y)
 {
-    sprite.setPosition(x,y);
+    sprite.setPosition(rand()%800,0);
     move();
 }
-void EnemyBulletOne::move()
+void BossBulletThree::move()
 {
-    sprite.move(4*speed*cos(k),4*speed*sin(k));
+    sprite.move(0,speed);
     boundingBox=sprite.getGlobalBounds();
     draw();
     collision();
 }
-void EnemyBulletOne::draw()
+void BossBulletThree::destory()
+{
+    sprite.setPosition(0,HEIGHT+100);
+}
+void BossBulletThree::draw()
 {
     Data::window.draw(sprite);
 }
-bool EnemyBulletOne::is_over()
+bool BossBulletThree::is_over()
 {
     int y=sprite.getPosition().y;
     int x=sprite.getPosition().x;
     return (y>HEIGHT)||(x>WIDTH)||(y<0)||(x<0);
 }
-void EnemyBulletOne::destory()
-{
-    sprite.setPosition(0,HEIGHT+100);
-}
-void EnemyBulletOne::collision()
+void BossBulletThree::collision()
 {
     if(Data::bomb.getElapsedTime().asSeconds()>0.5&&boundingBox.intersects(Data::player.bound()))
     {

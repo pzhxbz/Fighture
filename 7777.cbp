@@ -57,6 +57,10 @@
 			<Add directory="D:/SFML-2.3.2-gcc492/lib" />
 		</Linker>
 		<Unit filename="include/Bomb.h" />
+		<Unit filename="include/Boss.h" />
+		<Unit filename="include/BossBulletOne.h" />
+		<Unit filename="include/BossBulletThree.h" />
+		<Unit filename="include/BossBulletTwo.h" />
 		<Unit filename="include/Bullet.h" />
 		<Unit filename="include/Data.h" />
 		<Unit filename="include/Enemy.h" />
@@ -72,6 +76,10 @@
 		<Unit filename="include/Text.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Bomb.cpp" />
+		<Unit filename="src/Boss.cpp" />
+		<Unit filename="src/BossBulletOne.cpp" />
+		<Unit filename="src/BossBulletThree.cpp" />
+		<Unit filename="src/BossBulletTwo.cpp" />
 		<Unit filename="src/Bullet.cpp" />
 		<Unit filename="src/Data.cpp" />
 		<Unit filename="src/Enemy.cpp" />

@@ -7,7 +7,7 @@ EnemyBulletTwo::EnemyBulletTwo(float speed)
     texture.setSmooth(true);
     sprite.setTexture(texture);
     boundingBox=sprite.getGlobalBounds();
-    this->speed=speed*sqrt(Data::level);
+    this->speed=speed*sqrt(sqrt(Data::level));
     t.restart();
 }
 EnemyBulletTwo::~EnemyBulletTwo()

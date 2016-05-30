@@ -154,3 +154,7 @@ void Player::resetPosition()
     sprite.setPosition(WIDTH/2-16,HEIGHT-46);
     effectSprite.setPosition(WIDTH/2-5,HEIGHT-23-2.5);
 }
+sf::Vector2f Player::getPosition()
+{
+    return effectSprite.getPosition();
+}

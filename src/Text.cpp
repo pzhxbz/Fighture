@@ -16,8 +16,9 @@ Text::Text()
     power.setCharacterSize(20);
     score.setColor(sf::Color::Red);
     life.setColor(sf::Color::Blue);
-    level.setColor(sf::Color::White);
+    level.setColor(sf::Color::Red);
     bomb.setColor(sf::Color::Green);
+    power.setColor(sf::Color::Black);
 }
 Text::~Text()
 {

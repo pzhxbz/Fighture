@@ -24,7 +24,7 @@ void Score::bound()
 {
     if(boundingbox.intersects(Data::player.Playerbound()))
     {
-        Data::score+=100;
+        Data::score+=300;
         isDestory=true;
     }
 }

@@ -17,6 +17,7 @@ class Player
         void bullet_destory();
         PlayerBullet bullet[PLAYER_BULLET_MAX];
         void resetPosition();
+        sf::Vector2f getPosition();
     protected:
     private:
         sf::Texture texture;
